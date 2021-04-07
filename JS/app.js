@@ -43,7 +43,6 @@ sect.forEach(function(navSect) {
     const aLink = document.createElement('a');  
     aLink.innerHTML = someData; 
     aLink.setAttribute('class', 'menu__link'); 
-    aLink.setAttribute('id', `#${sectId}`);
     aLink.setAttribute("href", `#${sectId}`);  //need backticks (``)  not quotes (' ' or " ")
     const makeNav = document.createElement('li'); 
     makeNav.appendChild(aLink);
@@ -71,17 +70,7 @@ const newNavs = document.querySelectorAll('a');
 document.addEventListener('scroll',function () {
     sect.forEach(current => {
         newSectId = current.getAttribute("id");
-        if(inViewport(current)) {
-            current.classList.add("active");
-            document.querySelector(".navbar__menu a[href*=" + newSectId + "]").classList.add("nav__highlight");
-        } else {
-            current.classList.remove("active");
-            document.querySelector(".navbar__menu a[href*=" + newSectId + "]").classList.remove("nav__highlight");
-        }
-     /**   inViewport(current) ? current.classList.add("active") : current.classList.remove("active");
-        for(const links of newNavs) {
-            links.id == newSectId.id ? links.classList.add("nav__highlight") : links.classList.remove("nav__highlight");
-        }*/
+        inViewport(current) ? current.classList.add("active") : current.classList.remove("active");
     },
     {
         passive: true
