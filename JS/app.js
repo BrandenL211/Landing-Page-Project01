@@ -35,7 +35,7 @@ sect.forEach(function (navSect) {
       behavior: "smooth",
     });
   });
-  
+
 });
 
 //Function to check which section is in the viewport
@@ -56,8 +56,9 @@ const newNavs = document.querySelectorAll("a");
 document.addEventListener("scroll", function () {
   sect.forEach(
     (current) => {
+      sectionHead = current.firstElementChild.firstElementChild; 
       newSectId = current.getAttribute("id");
-      if (inViewport(current)) {
+      if (inViewport(sectionHead)) {
         current.classList.add("active");
         for (const link of newNavs) {
           const aRef = link.getAttribute("href");
