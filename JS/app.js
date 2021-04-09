@@ -30,10 +30,6 @@ sect.forEach(function (navSect) {
   ulNav.appendChild(makeNav);
 });
 
-const scroll = new SmoothScroll('.navbar__menu a[href*="#"]', {
-  speed: 800,
-});
-
 //Function to check which section is in the viewport
 function inViewport(el) {
   const rect = el.getBoundingClientRect();
@@ -72,3 +68,5 @@ document.addEventListener("scroll", function () {
     }
   );
 });
+
+//Scroll when clicking on navbar
