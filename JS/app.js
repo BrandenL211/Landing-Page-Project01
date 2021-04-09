@@ -28,6 +28,14 @@ sect.forEach(function (navSect) {
   const makeNav = document.createElement("li");
   makeNav.appendChild(aLink);
   ulNav.appendChild(makeNav);
+
+  makeNav.addEventListener("click", (evt) => {
+    evt.preventDefault();
+    navSect.scrollIntoView({
+      behavior: "smooth",
+    });
+  });
+  
 });
 
 //Function to check which section is in the viewport
