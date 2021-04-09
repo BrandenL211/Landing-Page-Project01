@@ -69,4 +69,3 @@ document.addEventListener("scroll", function () {
   );
 });
 
-//Scroll when clicking on navbar
